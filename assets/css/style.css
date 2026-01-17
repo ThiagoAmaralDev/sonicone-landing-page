@@ -31,6 +31,51 @@ li {
     list-style: none;
 }
 
+/* Seletores específicos */
+
+/* ESTRUTURA */
+
+#cabecalho {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+}
+
+#cabecalho ul {
+    display: flex;
+    flex-direction: column;
+}
+
+#cabecalho li {
+    margin-top: 5px;
+}
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid red;
+    margin: 10px;
+
+}
+
+#hero img {
+    width: 80%;
+    margin: 20px auto;
+}
+
+#container-beneficios {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid red;
+}
+
+
+
 
 
 
