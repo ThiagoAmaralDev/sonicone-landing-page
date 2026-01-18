@@ -68,6 +68,13 @@ li {
 #hero img {
     width: 80%;
     margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px var(--cor-destaque);
+    border: 1px solid var(--cor-destaque);
+}
+
+#hero p {
+    padding: 10px;
 }
 
 #container-beneficios {
