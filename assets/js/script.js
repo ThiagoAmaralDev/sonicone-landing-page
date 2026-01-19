@@ -31,30 +31,56 @@ botaoPreto.addEventListener('click', function() {
     trocarImagem('assets/img/fone/sonicone-preto.jpg', 'SonicOne Preto')
 });
 
-/* BOTÃO DESTAQUE */
+/* BOTÃO DESTAQUE E ESTOQUE */
 
 const botaoComprar = document.getElementById('btn-comprar-hero');
+
+let estoque = 5;
+
+let textoOriginal = botaoComprar.innerText;
 
 botaoComprar.addEventListener('click', function(event) {
     event.preventDefault();
 
-    let textoOriginal = botaoComprar.innerText;
     
-    botaoComprar.innerText = "ADICIONADO! ✔";
-    
-    botaoComprar.style.backgroundColor = "#11d811";
-    botaoComprar.style.color = "#000";
-    
-    setTimeout(() => {
-        botaoComprar.innerText = textoOriginal;
-    
-        botaoComprar.style.backgroundColor = "";
-        botaoComprar.style.color = "";
-    }, 2000);
 
+    if(estoque > 0) {
 
+        estoque--;
+
+        botaoComprar.innerText = "ADICIONADO! Restam: "+estoque;
+        botaoComprar.style.backgroundColor = "#11d811";
+        botaoComprar.style.color = "#000"
+
+        setTimeout(() => {
+
+            if(estoque === 0) {
+                botaoComprar.innerText = "ESGOTADO";
+        
+                botaoComprar.style.backgroundColor = "#f00";
+                botaoComprar.style.color = "#fff";
+            } else {
+                botaoComprar.innerText = textoOriginal;
+            
+                botaoComprar.style.backgroundColor = "";
+                botaoComprar.style.color = "";
+            }
+        }, 2000);
+     } else {
+        botaoComprar.innerText = "ESGOTADO";
+        botaoComprar.style.backgroundColor = "#f00";
+        botaoComprar.style.color = "#fff";
+
+    
+
+    }
+
+    
+    
 
 });
+
+
 
 
 /* FOOTER */
