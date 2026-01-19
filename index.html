@@ -6,6 +6,13 @@
     <title>SonicOne - Mergulhe no Silêncio </title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+    <style>
+        .seletor-cores {display: flex; gap: 10px; margin: 15px 0;}
+        .bolinha {width: 30px;  border: 2px solid #fff; height: 30px; border-radius: 50%; cursor: pointer;}
+        .cor-azul {background-color: #3773fe;}
+        .cor-branca {background-color: #fff;}
+        .cor-preto {background-color: #111;}
+    </style>
 <body>
     <header id="cabecalho">
         <a href="index.html" id="logo-marca">Sonic<span class="destaque-logo">One</span></a>
@@ -28,12 +35,28 @@
     <main>
         <section id="hero">
             <div class="hero-conteudo">
-                <h1>Mergulhe no Silêncio</h1>
+                <h1 id="titulo-produto">Mergulhe no Silêncio - SonicOne Preto</h1>
                 <p>Cancelamento de ruído ativo e 40h de bateria.</p>
                 <a href="#" class="botao-destaque">Comprar Agora</a>
             </div>
 
-            <img src="assets/img/sonicone.jpg" alt="Imagem do fone de ouvido SonicOne">
+            
+
+            <img id="imagem-fone" src="assets/img/fone/sonicone-preto.jpg" alt="Fone de ouvido SonicOne">
+
+            <!-- colocando seletores de cores -->
+
+            <div class="seletor-cores">
+                <div id="btn-azul" class="bolinha cor-azul">
+
+                </div>
+                <div id="btn-branco" class="bolinha cor-branca">
+
+                </div>
+                <div id="btn-preto" class="bolinha cor-preto">
+
+                </div>
+            </div>
             
             
 
@@ -71,7 +94,7 @@
     </main>
 
     <footer id="rodape">
-        <p>&copy; 2026 Sonic Audio. Feito por Thiago Amaral.</p>
+        <p id="texto-copyright">&copy; 2026 Sonic Audio. Feito por Thiago Amaral.</p>
         <ul id="redes-sociais">
             <li>
                 <a href="">
