@@ -54,6 +54,33 @@ li {
   margin: 5px 0 15px 0;
 }
 
+.btn-mobile {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+}
+
+#cabecalho nav #menu-lista {
+
+  display: none;
+  position: absolute;
+  background: #000;
+  top: 70px;
+  right: 0;
+  width: 100%;
+  padding: 20px;
+  z-index: 1000;
+}
+
+#cabecalho nav #menu-lista.ativo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-bottom: var(--cor-destaque);
+}
+
 #hero {
   display: flex;
   flex-direction: column;
@@ -210,6 +237,18 @@ li {
     gap: 40px;
     padding: 10px;
     align-items: center;
+  }
+
+  .btn-mobile {
+    display: none;
+  }
+
+  #menu-lista {
+    display: flex;
+    position: static;
+    width: auto;
+    background: transparent;
+    border: none;
   }
 
   #hero {

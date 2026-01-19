@@ -1,3 +1,34 @@
+/* CABEÇALHO */
+
+/* MENU HAMBÚRGUER */
+
+const btnMobile = document.getElementById('btn-mobile');
+const menuLista = document.getElementById('menu-lista')
+
+
+
+btnMobile.addEventListener('click', function() {
+    menuLista.classList.toggle('ativo');
+
+    if(menuLista.classList.contains('ativo')) {
+        btnMobile.innerText = 'X';
+    } else {
+        btnMobile.innerText = '☰';
+
+    }
+});
+
+const listaDeLinks = document.querySelectorAll('#menu-lista a');
+
+listaDeLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+        menuLista.classList.remove('ativo');
+
+        btnMobile.innerText = '☰'
+    });
+});
+
+
 
 
 /* HERO */
