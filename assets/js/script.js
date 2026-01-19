@@ -31,6 +31,32 @@ botaoPreto.addEventListener('click', function() {
     trocarImagem('assets/img/fone/sonicone-preto.jpg', 'SonicOne Preto')
 });
 
+/* BOTÃO DESTAQUE */
+
+const botaoComprar = document.getElementById('btn-comprar-hero');
+
+botaoComprar.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    let textoOriginal = botaoComprar.innerText;
+    
+    botaoComprar.innerText = "ADICIONADO! ✔";
+    
+    botaoComprar.style.backgroundColor = "#11d811";
+    botaoComprar.style.color = "#000";
+    
+    setTimeout(() => {
+        botaoComprar.innerText = textoOriginal;
+    
+        botaoComprar.style.backgroundColor = "";
+        botaoComprar.style.color = "";
+    }, 2000);
+
+
+
+});
+
+
 /* FOOTER */
 
 // MUDANÇA AUTOMÁTICA DO ANO 

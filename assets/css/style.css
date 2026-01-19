@@ -174,7 +174,10 @@ li {
 @media screen and (min-width: 1024px) {
     
     body {
-        padding: 0;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+        margin: 0;
     }
 
     #cabecalho, 
@@ -182,8 +185,8 @@ li {
     #container-beneficios,
     #rodape {
         max-width: 1900px;
-        margin-left: auto;
-        margin-right: auto;
+        /* margin-left: auto;
+        margin-right: auto; */
         padding: 0 20px;
     }
 
@@ -256,7 +259,6 @@ li {
     }
 
     #rodape {
-        margin-top: 20px;
         flex-direction: row;
         justify-content: space-between;
     }
