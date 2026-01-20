@@ -79,10 +79,6 @@ botoesComprar.forEach(function(botao) {
             localStorage.setItem("qtdCarrinho", contagemAtual);
 
         }
-localStorage.clear()
-
-
-    
     
     });
 
@@ -231,6 +227,39 @@ botaoComprar.addEventListener('click', function(event) {
     
     
 
+});
+
+/* FORMULÁRIO */
+
+const emailInput = document.getElementById('campo-email');
+const msgErro = document.getElementById('msg-email');
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+emailInput.addEventListener('input', function() {
+
+    let valorDigitado = emailInput.value;
+
+    if(emailRegex.test(valorDigitado) && !valorDigitado.includes("@yahoo.com")) {
+        emailInput.style.border = "2px solid limegreen";
+        msgErro.style.display = "none";
+    } else {
+        emailInput.style.border = "2px solid red";
+        msgErro.style.display = "block";
+
+        if(valorDigitado.includes("@yahoo.com")) {
+            msgErro.innerText = "Não aceitamos Yahoo!";
+        } else {
+            msgErro.innerText = "E-mail inválido";
+        }
+
+
+    }
+
+    if(valorDigitado === "") {
+        emailInput.style.border = "2px solid #333";
+        msgErro.style.display = "none";
+    }
 });
 
 /* ------------------- FIM HERO  --------------*/

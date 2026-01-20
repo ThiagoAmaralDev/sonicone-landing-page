@@ -310,6 +310,51 @@ li {
   padding: 15px 0;
 }
 
+#newsletter {
+    padding: 80px 20px;
+    background: linear-gradient(to bottom, #0b0c10, #1a1b20);
+    text-align: center;
+}
+
+#newsletter h2 { 
+  font-size: 2rem; 
+  margin-bottom: 10px; 
+
+}
+#newsletter p { 
+  color: #a0a0a0; 
+  margin-bottom: 20px; 
+}
+
+#form-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#campo-email {
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #333; 
+    background-color: #0b0c10;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+
+.mensagem-erro {
+    color: #ff4444; 
+    font-size: 0.8rem;
+    text-align: left;
+    margin-top: 20px;
+    padding-left: 10px;
+    display: none;
+}
+
 
 /* RESPONSIVIDADE */
 
