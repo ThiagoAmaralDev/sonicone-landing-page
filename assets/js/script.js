@@ -1,5 +1,27 @@
 /* CABEÇALHO */
 
+/* NAVBAR TRANSPARENTE E FIXA */
+
+
+const header = document.getElementById('cabecalho');
+const levarTopo = document.getElementById('btn-topo');
+
+window.addEventListener('scroll', function() {
+
+    if(window.scrollY > 80) {
+        header.classList.add('rolagem');
+    } else {
+        header.classList.remove('rolagem');
+    }
+
+    if(window.scrollY > 500) {
+        levarTopo.classList.add('visivel');
+    } else {
+        levarTopo.classList.remove('visivel');
+    }
+});
+
+
 /* MENU HAMBÚRGUER */
 
 const btnMobile = document.getElementById('btn-mobile');
