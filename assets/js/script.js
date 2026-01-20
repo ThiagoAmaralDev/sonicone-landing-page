@@ -1,4 +1,4 @@
-/* CABEÇALHO */
+/* ------------------------------ INICIO CABEÇALHO ---------*/
 
 /* NAVBAR TRANSPARENTE E FIXA */
 
@@ -51,9 +51,67 @@ listaDeLinks.forEach(function(link) {
 });
 
 
+/*------------------ INÍCIO CONTAINER BENEFÍCIOS --------------*/
+
+/* SCROLL nos cards */
+
+    window.addEventListener('scroll',revelar); 
+    
+    function revelar() {
+        let reveals = document.querySelectorAll('.card');
+
+        for(let i = 0 ; i < reveals.length ; i++) {
+            let windowHeight = window.innerHeight;
+
+            let elementTop = reveals[i].getBoundingClientRect().top;
+
+            let elementVisible = 150;
+
+            if(elementTop < windowHeight - elementVisible) {
+                reveals[i].style.transitionDelay = (i * 0.2) + 's';
+                reveals[i].classList.add('aparecer');
+            } else {
+                reveals[i].classList.remove('aparecer');
+            }
+        }
+    }
+
+    /* FAQ */
+
+    const acc = document.getElementsByClassName("accordion");
+
+    for(let i = 0 ; i < acc.length ; i++) {
+
+        acc[i].addEventListener("click", function() {
+
+            for(j = 0 ; j < acc.length ; j++) {
+                if(acc[j] !== this && acc[j].classList.contains("active")) {
+                    acc[j].classList.remove("active");
+
+                    acc[j].nextElementSibling.style.maxHeight = null;
+                }
+            }
+
+            this.classList.toggle("active");
+
+            let painel = this.nextElementSibling;
+
+            if(painel.style.maxHeight) {
+                painel.style.maxHeight = null;
+            } else {
+                painel.style.maxHeight = painel.scrollHeight + "px";
+            }
+        });
+    }
 
 
-/* HERO */
+/*------------------ FIM CONTAINER BENEFÍCIOS --------------*/
+
+
+
+
+
+/* ------------------- INÍCIO HERO  --------------*/
 
 /* SELETOR DE CORES */
 
@@ -133,10 +191,12 @@ botaoComprar.addEventListener('click', function(event) {
 
 });
 
+/* ------------------- FIM HERO  --------------*/
 
 
 
-/* FOOTER */
+
+/*------------------ INÍCIO FOOTER --------------*/
 
 // MUDANÇA AUTOMÁTICA DO ANO 
 
@@ -152,6 +212,8 @@ if(anoAtual > anoLancamento) {
 } else {
     elementoCopyright.innerHTML = `&copy ${anoAtual} Sonic Audio. Feito por Thiago Amaral.`;
 }
+
+/*------------------ FIM FOOTER --------------*/
 
 
 
