@@ -50,6 +50,48 @@ listaDeLinks.forEach(function(link) {
     });
 });
 
+/* BOTÃO COMPRAR */
+
+const contadorElemento = document.getElementById("contagem-carrinho");
+const botoesComprar = document.querySelectorAll(".botao-destaque");
+
+let contagemAtual = localStorage.getItem("qtdCarrinho");
+
+if(contagemAtual === null) {
+    contagemAtual = 0;
+} else {
+    contagemAtual = parseInt(contagemAtual);
+}
+
+contadorElemento.innerText = contagemAtual;
+
+botoesComprar.forEach(function(botao) {
+
+    botao.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        if(contagemAtual == 10) {
+            alert("Limite de 10 unidades por cliente atingido!");
+        } else {
+            contagemAtual++;
+            contadorElemento.innerText = contagemAtual;
+    
+            localStorage.setItem("qtdCarrinho", contagemAtual);
+
+        }
+localStorage.clear()
+
+
+    
+    
+    });
+
+
+});
+
+
+/* -------FIM CABEÇALHO --------- */
+
 
 /*------------------ INÍCIO CONTAINER BENEFÍCIOS --------------*/
 
@@ -146,7 +188,7 @@ botaoPreto.addEventListener('click', function() {
 
 const botaoComprar = document.getElementById('btn-comprar-hero');
 
-let estoque = 5;
+let estoque = 10;
 
 let textoOriginal = botaoComprar.innerText;
 
