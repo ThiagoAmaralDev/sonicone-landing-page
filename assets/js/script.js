@@ -72,11 +72,27 @@ botoesComprar.forEach(function(botao) {
 
         if(contagemAtual == 10) {
             alert("Limite de 10 unidades por cliente atingido!");
+
+            botao.style.backgroundColor = "red";
+            botao.innerText = "LIMITE!";
+            setTimeout(() => {
+                botao.style.backgroundColor = "";
+                botao.innerText = textoOriginal;
+            }, 1000);
         } else {
             contagemAtual++;
             contadorElemento.innerText = contagemAtual;
-    
             localStorage.setItem("qtdCarrinho", contagemAtual);
+
+            botao.style.backgroundColor = "#11d811";
+            botao.style.color = "#000"; 
+            botao.innerText = "ADICIONADO!";
+
+            setTimeout(() => {
+                botao.style.backgroundColor = ""; 
+                botao.style.color = ""; 
+                botao.innerText = textoOriginal; 
+            }, 2000);
 
         }
     
@@ -182,52 +198,7 @@ botaoPreto.addEventListener('click', function() {
 
 /* BOTÃO DESTAQUE E ESTOQUE */
 
-const botaoComprar = document.getElementById('btn-comprar-hero');
 
-let estoque = 10;
-
-let textoOriginal = botaoComprar.innerText;
-
-botaoComprar.addEventListener('click', function(event) {
-    event.preventDefault();
-
-    
-
-    if(estoque > 0) {
-
-        estoque--;
-
-        botaoComprar.innerText = "ADICIONADO! Restam: "+estoque;
-        botaoComprar.style.backgroundColor = "#11d811";
-        botaoComprar.style.color = "#000"
-
-        setTimeout(() => {
-
-            if(estoque === 0) {
-                botaoComprar.innerText = "ESGOTADO";
-        
-                botaoComprar.style.backgroundColor = "#f00";
-                botaoComprar.style.color = "#fff";
-            } else {
-                botaoComprar.innerText = textoOriginal;
-            
-                botaoComprar.style.backgroundColor = "";
-                botaoComprar.style.color = "";
-            }
-        }, 2000);
-     } else {
-        botaoComprar.innerText = "ESGOTADO";
-        botaoComprar.style.backgroundColor = "#f00";
-        botaoComprar.style.color = "#fff";
-
-    
-
-    }
-
-    
-    
-
-});
 
 /* FORMULÁRIO */
 
