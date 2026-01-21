@@ -359,6 +359,14 @@ li {
     display: none;
 }
 
+.botao-inscricao {
+  background: var(--cor-destaque);
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  color: var(--cor-de-fundo);
+}
+
 
 /* RESPONSIVIDADE */
 
@@ -471,6 +479,19 @@ li {
   }
 
   .botao-destaque:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px var(--cor-destaque);
+  }
+
+
+  .botao-inscricao {
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s;
+      cursor: pointer;
+  }
+
+  .botao-inscricao:hover {
     transform: scale(1.05);
     box-shadow: 0px 0px 15px var(--cor-destaque);
   }
